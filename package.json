@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "React fundamentals by LoftBlog",
   "author": "Sergey Laptev <iamsergeylaptev@gmail.com> (https://twitter.com/iamsergeylaptev)",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sergeylaptev/react-fundamentals.git"
+  },
   "browserify": {
     "transform": [
       "coffee-reactify"
