@@ -1,13 +1,4 @@
 React = require 'react'
+App = require './app'
 
-App = React.createClass
-  displayName: 'App'
-
-  render: ->
-    <div>
-      <p>Hello, world!</p>
-    </div>
-
-module.exports = App
-
-React.render <App />, document.getElementById 'react-app'
+React.render <App />, document.getElementById 'app'

@@ -3,16 +3,48 @@ var App, React;
 
 React = require('react');
 
+App = require('./app');
+
+React.render(React.createElement(App, null), document.getElementById('app'));
+
+
+
+},{"./app":2,"react":"react"}],2:[function(require,module,exports){
+var App, React;
+
+React = require('react');
+
 App = React.createClass({
   displayName: 'App',
+  propTypes: {
+    text: React.PropTypes.string.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      text: 'Hello, world'
+    };
+  },
+  getInitialState: function() {
+    return {
+      value: 'Привет!'
+    };
+  },
   render: function() {
-    return React.createElement("div", null, React.createElement("p", null, "Hello, world!"));
+    return React.createElement("div", null, React.createElement("p", null, this.state.value), React.createElement("input", {
+      "type": "text",
+      "onChange": this.handleChange
+    }));
+  },
+  handleChange: function(e) {
+    var value;
+    value = e.target.value;
+    return this.setState({
+      value: value
+    });
   }
 });
 
 module.exports = App;
-
-React.render(React.createElement(App, null), document.getElementById('react-app'));
 
 
 
