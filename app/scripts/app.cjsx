@@ -1,25 +1,22 @@
 React = require 'react'
+Tabs = require './Tabs/Tabs'
+Tab = require './Tabs/Tab'
 
 App = React.createClass
   displayName: 'App'
 
-  propTypes:
-    text: React.PropTypes.string.isRequired
-
-  getDefaultProps: ->
-    text: 'Hello, world'
-
-  getInitialState: ->
-    value: 'Привет!'
-
   render: ->
-    <div>
-      <p>{ @state.value }</p>
-      <input type="text" onChange={ @handleChange } />
+    <div className="wrapper">
+      <Tabs>
+        <Tab label="Вкладка 1">
+          <h3>Содержимое вкладки 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </Tab>
+        <Tab label="Вкладка 2">
+          <h3>Содержимое вкладки 2</h3>
+          <p>sed do eiusmod tempor incididunt ut labore et dolore...</p>
+        </Tab>
+      </Tabs>
     </div>
-
-  handleChange: (e) ->
-    value = e.target.value
-    @setState(value: value)
 
 module.exports = App
